@@ -19,17 +19,17 @@ export default function ListPokemon(props) {
   return (
     <>
       <Grid container justify="center">
-        {pokemonList.map((pokemon, id) => {
+        {pokemonList.map((pokemon) => {
           let url =
-            'https://github.com/PokeAPI/sprites/blob/master/sprites/pokemon/';
-          let pokeIndex = pokemon.url.split('/')[
-            pokemon.url.split('/').length - 2
-          ];
+            'https://github.com/PokeAPI/sprites/blob/master/sprites/pokemon/other-sprites/official-artwork/';
+          let id = pokemon.url.split('/')[pokemon.url.split('/').length - 2];
+
           return (
             <PokeCard
               name={pokemon.name}
-              image={`${url}${pokeIndex}.png?raw=true`}
-              to={`/poke-info/${pokeIndex}`}
+              image={`${url}${id}.png?raw=true`}
+              to={`/poke-info/${id}/${pokemon.name}`}
+              key={id}
             />
           );
         })}

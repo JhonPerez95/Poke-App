@@ -10,7 +10,7 @@ function App() {
     <Router>
       <Route path="/" exact component={Home} />
       <Route path="/list/" component={ListPokemon} />
-      <Route path="/poke-info/:pokeIndex" exact component={PokeInfo} />
+      <Route path="/poke-info/:id/:name" exact component={PokeInfo} />
     </Router>
   );
 }
