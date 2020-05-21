@@ -12,14 +12,13 @@ export default function PokeInfo({ match }) {
   let url =
     'https://github.com/PokeAPI/sprites/blob/master/sprites/pokemon/other-sprites/official-artwork/';
 
-  const loadInfo = async () => {
+  const loadInfo = async (id) => {
     const res = await infoPokemon(id);
     setInfo(res);
   };
-
   useEffect(() => {
-    loadInfo();
-  }, []);
+    loadInfo(id);
+  }, [id]);
   return (
     <>
       <h1> Poke info </h1>
